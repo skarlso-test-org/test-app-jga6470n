@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  config: |
+    ConfigRepo: ssh://git@github.com/skarlso-test-org/test-app-jga6470n.git
+    FluxNamespace: wego-system
+    WegoNamespace: wego-system
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: weave-gitops-config
+  namespace: wego-system
