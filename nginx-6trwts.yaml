@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-nginx-6trwts
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-6trwts
+  namespace: my-nginx-6trwts
+  labels:
+    name: nginx-6trwts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-6trwts
+  template:
+    metadata:
+      namespace: my-nginx-6trwts
+      labels:
+        name: nginx-6trwts
+    spec:
+      containers:
+      - name: nginx-6trwts
+        image: nginx
+        ports:
+        - containerPort: 80
+
